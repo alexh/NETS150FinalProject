@@ -172,7 +172,7 @@ Pirate_Warrior Miracle_Rogue 0.6164
 Pirate_Warrior Aggro_Shaman 0.4442
 Pirate_Warrior Elemental_Shaman 0.4163
 Pirate_Warrior Murloc_Shaman 0.7067
-Pirate_Warrior Hand_Murloc 6344
+Pirate_Warrior Hand_Murloc 0.6344
 Pirate_Warrior Zoo_Murloc 0.5592
 Pirate_Warrior Taunt_Warrior 0.4805
 Taunt_Warrior Jade_Druid 0.3650
