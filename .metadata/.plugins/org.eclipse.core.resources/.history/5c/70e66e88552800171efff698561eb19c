@@ -1,0 +1,5 @@
+
+public class Balls {
+ 
+	Graph g = new Graph();
+}
