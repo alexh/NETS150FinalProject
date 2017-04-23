@@ -9,7 +9,8 @@ public class Vertex {
 	}
 	
 	public Vertex(String name, String className){
-		
+		this.name = name;
+		this.className = className;
 	}
 	
 	public void setName(String name){
