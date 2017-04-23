@@ -12,11 +12,13 @@ public class FileParser {
 			g = new Graph();
 		    String line;
 		    while ((line = br.readLine()) != null) {
-		       System.out.println(line);
 		       String[] parts =line.split(" ");
-		       String deck1 = parts[0];
-		       String deck2 = parts[1];
-		       double winRate = Double.parseDouble(parts[2]);
+		       if (parts.length == 3){
+		    	   String deck1 = parts[0];
+			       String deck2 = parts[1];
+			       double winRate = Double.parseDouble(parts[2]);
+			       System.out.println(deck1 + " beats " + deck2 + " with " + winRate);
+		       }
 		    }
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
