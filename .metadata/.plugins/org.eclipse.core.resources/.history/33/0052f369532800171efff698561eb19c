@@ -1,0 +1,12 @@
+
+public class FileParser {
+
+	public FileParser(String filename){
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+		    String line;
+		    while ((line = br.readLine()) != null) {
+		       // process the line.
+		    }
+		}
+	}
+}
