@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		FileParser fp = new FileParser("../test.txt");
-		GraphApplet graph = new GraphApplet();
+		Graph graph = new Graph();
 		graph.init();
 	      JFrame frame = new JFrame("MyPanel");
 	      frame.getContentPane().add(graph);
