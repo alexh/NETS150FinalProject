@@ -15,11 +15,6 @@ import org.jgraph.graph.GraphConstants;
 import org.jgrapht.ListenableGraph;
 import org.jgrapht.ext.JGraphModelAdapter;
 import org.jgrapht.graph.ListenableDirectedGraph;
-
-import com.jgraph.layout.JGraphFacade;
-import com.jgraph.layout.JGraphLayout;
-import com.jgraph.layout.hierarchical.JGraphHierarchicalLayout;
-
 import org.jgrapht.graph.DefaultEdge;
 
 /**
@@ -70,11 +65,6 @@ public class GraphApplet extends JApplet {
         positionVertexAt( "v4", 380, 70 );
 
         // that's all there is to it!...
-        JGraphLayout layout = new JGraphHierarchicalLayout(); // or whatever layouting algorithm
-        JGraphFacade facade = new JGraphFacade(jgraph);
-        layout.run(facade);
-        Map nested = facade.createNestedMap(false, false);
-        jgraph.getGraphLayoutCache().edit(nested);
     }
 
 
@@ -97,8 +87,6 @@ public class GraphApplet extends JApplet {
     }
 
 
-    
-    
     private void positionVertexAt( Object vertex, int x, int y ) {
         DefaultGraphCell cell = m_jgAdapter.getVertexCell( vertex );
         Map              attr = cell.getAttributes(  );

@@ -15,11 +15,6 @@ import org.jgraph.graph.GraphConstants;
 import org.jgrapht.ListenableGraph;
 import org.jgrapht.ext.JGraphModelAdapter;
 import org.jgrapht.graph.ListenableDirectedGraph;
-
-import com.jgraph.layout.JGraphFacade;
-import com.jgraph.layout.JGraphLayout;
-import com.jgraph.layout.hierarchical.JGraphHierarchicalLayout;
-
 import org.jgrapht.graph.DefaultEdge;
 
 /**
