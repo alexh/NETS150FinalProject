@@ -63,8 +63,56 @@ Crystal_Rogue Miracle_Priest 0.5847
 Crystal_Rogue Silence_Priest 0.5190
 Miracle_Rogue Jade_Druid 0.5835
 Miracle_Rogue Ramp_Druid 0.6700
+Miracle_Rogue Token_Druid 0.4587
+Miracle_Rogue Midrange_Hunter 0.5385
+Miracle_Rogue Burn_Mage 0.4041
+Miracle_Rogue Exodia_Mage 0.5649
+Miracle_Rogue Freeze_Mage 0.3541
+Miracle_Rogue Secret_Mage 0.4184
+Miracle_Rogue Control_Paladin 0.5871
+Miracle_Rogue Elemental_Paladin 0.5592
+Miracle_Rogue Midrange_Paladin 0.5322
+Miracle_Rogue Murloc_Paladin 0.5034
+Miracle_Rogue Dragon_Priest 0.5262
+Miracle_Rogue Miracle_Priest 0.5985
+Miracle_Rogue Silence_Priest 0.5753
+Miracle_Rogue Crystal_Rogue 0.4427
+Miracle_Rogue Aggro_Shaman 0.4230
+Miracle_Rogue Elemental_Shaman 0.4971
+Miracle_Rogue Murloc_Shaman 0.5530
+Miracle_Rogue Hand_Murloc 0.5905
+Miracle_Rogue Zoo_Murloc 0.5732
+Miracle_Rogue Pirate_Warrior 0.3859
+Miracle_Rogue Taunt_Warrior 0.5305
+Aggro_Shaman Midrange_Hunter 0.6308
+Aggro_Shaman Midrange_Paladin 0.4619
+Aggro_Shaman Crystal_Paladin 0.5114
+Aggro_Shaman Miracle_Rogue 0.5730
+Aggro_Shaman Pirate_Warrior 0.5558
+Aggro_Shaman Taunt_Warrior 0.3456
+Elemental_Shaman Jade_Druid 0.5675
 
-Elemental_Shaman Jade_Druid 0.5676
-Zoo_Warlock Jade_Druid 0.5728
-Pirate_Warrior Jade_Druid 0.5174
-Taunt_Warrior Jade_Druid 0.3650
+Elemental_Shaman Token_Druid 0.5827
+Elemental_Shaman Midrange_Hunter 0.6005
+Elemental_Shaman Burn_Mage 0.5475
+Elemental_Shaman Exodia_Mage 0.5015
+Elemental_Shaman Freeze_Mage 0.3432
+Elemental_Shaman Secret_Mage 0.6079
+Elemental_Shaman Control_Paladin 0.5395
+Elemental_Shaman Elemental_Paladin 0.5358
+Elemental_Shaman Midrange_Paladin 0.5052
+Elemental_Shaman Murloc_Paladin 0.5999
+Elemental_Shaman Dragon_Priest 0.3108
+Elemental_Shaman Miracle_Priest 0.5102
+Elemental_Shaman Silence_Priest 0.5095
+Elemental_Shaman Crystal_Rogue 0.3475
+Elemental_Shaman Miracle_Rogue 0.5029
+Elemental_Shaman Murloc_Shaman 0.4922
+Elemental_Shaman Hand_Murloc 0.5817
+Elemental_Shaman Zoo_Murloc 0.6377
+Elemental_Shaman Pirate_Warrior 0.5837
+Elemental_Shaman Taunt_Warrior 0.4307
+Murloc_Shaman
+
+
+
