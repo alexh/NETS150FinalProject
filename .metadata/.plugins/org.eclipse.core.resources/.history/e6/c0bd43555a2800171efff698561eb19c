@@ -1,0 +1,10 @@
+
+public class Vertex {
+
+	String name;
+	String className;
+	
+	public Vertex(){
+		
+	}
+}
