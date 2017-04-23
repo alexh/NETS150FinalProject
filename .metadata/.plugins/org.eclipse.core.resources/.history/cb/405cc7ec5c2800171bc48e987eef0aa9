@@ -15,11 +15,6 @@ import org.jgraph.graph.GraphConstants;
 import org.jgrapht.ListenableGraph;
 import org.jgrapht.ext.JGraphModelAdapter;
 import org.jgrapht.graph.ListenableDirectedGraph;
-
-import com.jgraph.layout.JGraphFacade;
-import com.jgraph.layout.JGraphLayout;
-import com.jgraph.layout.hierarchical.JGraphHierarchicalLayout;
-
 import org.jgrapht.graph.DefaultEdge;
 
 /**
@@ -70,11 +65,6 @@ public class GraphApplet extends JApplet {
         positionVertexAt( "v4", 380, 70 );
 
         // that's all there is to it!...
-        JGraphLayout layout = new JGraphHierarchicalLayout(); // or whatever layouting algorithm
-        JGraphFacade facade = new JGraphFacade(jgraph);
-        layout.run(facade);
-        Map nested = facade.createNestedMap(false, false);
-        jgraph.getGraphLayoutCache().edit(nested);
     }
 
 
@@ -96,9 +86,25 @@ public class GraphApplet extends JApplet {
         jg.setBackground( c );
     }
 
+    void layout( 
+    	     ListenableDirectedGraph graphModel, 
+    	     JGraphModelAdapter graphAdapter, 
+    	     JGraph graph) 
+    	{ 
+    	     List roots = new ArrayList(); 
+    	     Iterator vertexIter = graphModel.vertexSet().iterator(); 
+    	     while (vertexIter.hasNext()) { 
+    	         Object vertex = vertexIter.next(); 
+    	         if (graphModel.inDegreeOf(vertex) == 0) { 
+    	             roots.add(graphAdapter.getVertexCell(vertex)); 
+    	         } 
+    	     } 
 
-    
-    
+    	     JGraphLayoutAlgorithm layout = new SugiyamaLayoutAlgorithm(); 
+    	     layout.applyLayout(graph, layout, roots.toArray(), null); 
+    	} 
+
+
     private void positionVertexAt( Object vertex, int x, int y ) {
         DefaultGraphCell cell = m_jgAdapter.getVertexCell( vertex );
         Map              attr = cell.getAttributes(  );
