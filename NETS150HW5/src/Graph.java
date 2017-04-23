@@ -18,6 +18,7 @@ public class Graph {
 		}
 		
 		adjList.get(v1).add(v2);
+		System.out.println("added " + v1.className + " to " + v2.className);
 	}
 	
 	public boolean hasEdge(Vertex v1, Vertex v2){
