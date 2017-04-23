@@ -9,16 +9,9 @@ public class FileParser {
 
 	public FileParser(String filename){
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-			g = new Graph();
 		    String line;
 		    while ((line = br.readLine()) != null) {
-		       String[] parts =line.split(" ");
-		       if (parts.length == 3){
-		    	   String deck1 = parts[0];
-			       String deck2 = parts[1];
-			       double winRate = Double.parseDouble(parts[2]);
-			       System.out.println(deck1 + " beats " + deck2 + " with " + winRate);
-		       }
+		       System.out.println(line);
 		    }
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
