@@ -13,5 +13,3 @@ public class Graph {
 	public boolean hasEdge(Vertex v1, Vertex v2){
 		return adjList.containsKey(v1) && adjList.get(v1).contains(v2);
 	}
-	
-}
