@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 INDEX VERSION 1.127+/Users/alexhaynes32/NETS150HW5/.metadata/.plugins/org.eclipse.jdt.core
 3145990890.index
 1336265832.index
@@ -14,7 +13,6 @@ INDEX VERSION 1.127+/Users/alexhaynes32/NETS150HW5/.metadata/.plugins/org.eclips
 2777386132.index
 786462423.index
 4103544854.index
-583564583.index
 2147531794.index
 3369272816.index
 489563832.index
@@ -25,31 +23,3 @@ INDEX VERSION 1.127+/Users/alexhaynes32/NETS150HW5/.metadata/.plugins/org.eclips
 4059364602.index
 4233516598.index
 3778290771.index
-=======
-INDEX VERSION 1.127+C:\Users\Fatman\Desktop\netshw150\NETS150FinalProject\.metadata\.plugins\org.eclipse.jdt.core
-2605753512.index
-3601087176.index
-1158171093.index
-1605050771.index
-3748187462.index
-1764245357.index
-1557531465.index
-2330531277.index
-3942250804.index
-976639436.index
-361095803.index
-425557641.index
-2388575630.index
-4104040832.index
-1813300556.index
-2271959415.index
-4020591375.index
-478684189.index
-4243257849.index
-801767645.index
-483060846.index
-2862209410.index
-1956487777.index
-8144747.index
-4002347327.index
->>>>>>> cebc565d00d5783319174cfe138a9a8de3248f87
