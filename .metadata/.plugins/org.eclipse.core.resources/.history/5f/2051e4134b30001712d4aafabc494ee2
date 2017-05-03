@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		Scanner sc=new Scanner(System.in);
 		//"../test.txt"
 		FileParser fp = new FileParser(sc.next());
 		Graph g = fp.getGraph();
