@@ -1,0 +1,13 @@
+public class Edge {
+	
+	Vertex src;
+	Vertex dest;
+	double weight;
+	
+	public Edge(Vertex src, Vertex dest, double weight){
+		this.src = src;
+		this.dest = dest;
+		this.weight = weight;
+	}
+
+}

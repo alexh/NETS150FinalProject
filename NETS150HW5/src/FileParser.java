@@ -19,9 +19,13 @@ public class FileParser {
 			       double winRate = Double.parseDouble(parts[2]);
 			       Vertex v1 = new Vertex(deck1, deck1.substring(deck1.indexOf('_') + 1));
 			       Vertex v2 = new Vertex(deck2,  deck2.substring(deck2.indexOf('_') + 1));
-			       g.addEdge(v1, v2);
+			     //An edge from deck A to deck B with weight x means
+			     //deck A beats deck B with a probability of x
+			       g.addEdge(v1, v2, winRate);
+			       g.addEdge(v2, v1, 1.0 - winRate);
 		       }
 		    }
+		    
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,4 +34,9 @@ public class FileParser {
 			e.printStackTrace();
 		}
 	}
+	
+	public Graph getGraph(){
+		return g;
+	}
+	
 }

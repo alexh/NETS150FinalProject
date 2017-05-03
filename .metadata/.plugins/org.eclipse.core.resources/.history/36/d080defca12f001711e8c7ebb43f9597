@@ -1,0 +1,43 @@
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.PriorityQueue;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		FileParser fp = new FileParser("../test.txt");
+		Graph g = fp.getGraph();
+//		GraphApplet graphVisual = fp.getGraphApplet();
+//		graphVisual.init(g);
+//	      JFrame frame = new JFrame("MyPanel");
+//	      frame.getContentPane().add(graphVisual);
+//	      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//	      frame.pack();
+//	      frame.setLocationRelativeTo(null);
+//	      frame.setVisible(true);
+	      
+//	      for (Vertex v : g.adjList.keySet()){
+//		    	System.out.println(v);
+//		    }
+//	      System.out.println(g.edges.size());
+		for(Vertex v : g.adjList.keySet()){
+//			if(v.className.equals("Hunter"))
+			System.out.println(v);
+		}
+		
+		System.out.println(g.adjList.keySet().size());
+		PageRank pr = new PageRank(g);
+		pr.executePageRank(1);
+		
+		
+		for(Entry<Vertex, Double> e : pr.scores.entrySet()){
+			System.out.println(e.getKey().name + " " + e.getValue());
+		}
+	}
+
+}

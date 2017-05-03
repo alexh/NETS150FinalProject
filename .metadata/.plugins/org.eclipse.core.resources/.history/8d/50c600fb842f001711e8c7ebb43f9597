@@ -1,0 +1,13 @@
+
+public class PageRank {
+	
+	Graph g;
+	Map<Vertex>
+	
+	public PageRank(Graph g){
+		this.g = g;
+	}
+	
+	
+
+}
