@@ -4,7 +4,35 @@ based card game where players can choose to play as one of nine classes and we a
 
 The category we took from above is graph and graph algorithms. Data structures for constructing a graph were written, so that pagerank could be run on the dataset. From the pagerank, we marked the vertex with the most pagerank as the most optimal class because it has the most "flow" from all the other vertices.
 
+Implementation Project
+
+Code - 
+Under NETS150FinalProject folder
+
+User manual - 
+In UserManual.doc
+
+Empirical Analysis
+
+Hypotheses that you proved/disproved
+
+Analysis results
+
+Graphs supporting your analysis
+Under Drawings Folder
+
+Any code that you wrote or used for the analysis - 
+Under NETS150FinalProject/PageRank.java 
+
+The data set that you used - 
+See test.txt for dataset 
+link to dataset: (http://www.vicioussyndicate.com/drr/matchup-chart-data-reaper-report/)
+
+Theoretical Proofs
+
+
+
 Who did what:
 Alex Haynes - python graph (readable graph under the drawing folder), pagerank algorithm, graph data structures, parsing the file
-Henry Zhu - writeup, interactive graph (messy, but moveable), recording 1/2 of the data from the website into the txt file, bar graph of pagerank
+Henry Zhu - writeup except for Empricial Analysis section, interactive graph (messy, but moveable), recording 1/2 of the data from the website into the txt file, bar graph of pagerank
 Will Yeung - recording the rest of the data from the website into the txt file
