@@ -1,7 +1,9 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -21,6 +23,13 @@ import org.jgrapht.graph.ListenableDirectedGraph;
 import com.jgraph.layout.JGraphFacade;
 import com.jgraph.layout.JGraphLayout;
 import com.jgraph.layout.hierarchical.JGraphHierarchicalLayout;
+import com.jgraph.layout.organic.JGraphOrganicLayout;
+import com.jgraph.layout.organic.JGraphSelfOrganizingOrganicLayout;
+import com.jgraph.layout.tree.JGraphRadialTreeLayout;
+import com.mxgraph.layout.mxParallelEdgeLayout;
+import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
+import com.mxgraph.swing.mxGraphComponent;
+import com.mxgraph.view.mxGraph;
 
 import org.jgrapht.graph.DefaultEdge;
 
@@ -42,54 +51,59 @@ public class GraphApplet extends JApplet {
      * @see java.applet.Applet#init().
      */
     public void init( Graph ourGraph ) {
-        // create a JGraphT graph
-        ListenableGraph g = new ListenableDirectedGraph( DefaultEdge.class );
-
-        // create a visualization using JGraph, via an adapter
-        m_jgAdapter = new JGraphModelAdapter( g );
-
-        JGraph jgraph = new JGraph( m_jgAdapter );
-
-        adjustDisplaySettings( jgraph );
-        getContentPane(  ).add( jgraph );
         resize( DEFAULT_SIZE );
-        
-//        for(Entry<Vertex, LinkedList<Vertex>> e : ourGraph.adjList.entrySet()){
-//        	if(!g.containsVertex(e.getKey().name)){
-//        		g.addVertex(e.getKey().name);
-//        	}
-//        	for(Vertex v : e.getValue()){
-//        		if(!g.containsVertex(v.name)){
-//            		g.addVertex(v.name);
-//            	}
-//        		g.addEdge(e.getKey().name, v.name);
-////        		System.out.println("added edge to visualizer");
-//        	}
-//        }
-        
-        // add some sample data (graph manipulated via JGraphT)
-        g.addVertex( "v1" );
-        g.addVertex( "v2" );
-        g.addVertex( "v3" );
-        g.addVertex( "v4" );
+        mxGraph graph = new mxGraph();        
+        Object parent = graph.getDefaultParent();
 
-        g.addEdge( "v1", "v2" );
-        g.addEdge( "v2", "v3" );
-        g.addEdge( "v3", "v1" );
-        g.addEdge( "v4", "v3" );
-
-        // position vertices nicely within JGraph component
-        positionVertexAt( "v1", 130, 40 );
-        positionVertexAt( "v2", 60, 200 );
-        positionVertexAt( "v3", 310, 230 );
-        positionVertexAt( "v4", 380, 70 );
-
-        // that's all there is to it!...
-        JGraphLayout layout = new JGraphHierarchicalLayout(); // or whatever layouting algorithm
-        JGraphFacade facade = new JGraphFacade(jgraph);
-        layout.run(facade);
-        Map nested = facade.createNestedMap(false, false);
-        jgraph.getGraphLayoutCache().edit(nested);
+		graph.getModel().beginUpdate();
+		try
+		{
+	        int y = 40;
+	        HashMap<Vertex, Object> addedVertices = new HashMap<Vertex, Object>();
+	        
+	        for(Entry<Vertex, LinkedList<Vertex>> entry : ourGraph.adjList.entrySet())
+	        {
+	        	Vertex v = entry.getKey();
+	        	LinkedList<Vertex> neighbors = entry.getValue();
+	        	
+	        	//Check if vertex exists already
+	        	//if not, draw it
+	        	if(!addedVertices.containsKey(v))
+	        	{
+	        		addedVertices.put(v, graph.insertVertex(parent, null, v.toString(), 20, y, 80, 30));
+	        		y += 100;
+	            	
+	        	}
+	        	
+	        	//Add the neighbors
+	        	for(Vertex neighbor : neighbors)
+	        	{
+	        		if(!addedVertices.containsKey(neighbor))
+	        		{
+		        		addedVertices.put(neighbor, graph.insertVertex(parent, null, v.toString(), 20, y, 80, 30));
+	            		y += 100;
+	        		}
+	        		
+	        	}
+	        }
+	        
+	        //now go through edges
+	        for(Edge edge : ourGraph.edges)
+	        {
+	    		//add the edge between the current node and the neighbor
+	    		graph.insertEdge(parent, null, edge.weight, addedVertices.get(edge.src), addedVertices.get(edge.dest));
+	        }
+		}
+		finally
+		{
+			graph.getModel().endUpdate();
+		}
+		
+		final mxGraphComponent graphComponent = new mxGraphComponent(graph);
+		getContentPane().add(graphComponent, BorderLayout.CENTER);
+		new mxHierarchicalLayout(graph).execute(graph.getDefaultParent());
+		new mxParallelEdgeLayout(graph).execute(graph.getDefaultParent());
+		getContentPane().setSize(DEFAULT_SIZE);
     }
 
 

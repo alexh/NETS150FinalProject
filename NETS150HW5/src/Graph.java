@@ -9,7 +9,6 @@ public class Graph {
 	Map<Vertex, LinkedList<Vertex>> adjList = new HashMap<>();
 	Set<Edge> edges = new HashSet<>();
 	
-	
 	public void addVertex(Vertex v){
 		LinkedList<Vertex> newList = new LinkedList<>();
 		adjList.put(v, newList);
