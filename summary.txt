@@ -16,9 +16,25 @@ Empirical Analysis -
 
 Hypotheses that you proved/disproved - Our hypothesis is that Hearthstone is that despite the discrepancies in the win rates among different decks, Hearthstone is still a fair game because only a small number decks will have a higher average win rates. Due to the nature of the game having large number of characters, there will be some decks whose attributes that aren’t fully balanced with other decks. In addition, the emergence of popular deck strategies from time to time will some strength and weaknesses in decks that were not known before to the game developers. Although attributes of decks does play a major role in game, human strategy is still a big portion of determining win rates. Therefore, even if a player chooses a deck with higher average win rates, there are counter strategies and it does not necessarily mean the player is more likely to win. 
 
-Analysis results - 
+Method: In standard mode, each player is allowed to pick 30 individual cards that make up their deck. At the start of each game, you don’t know what type of cards will be in your opponents deck. However, as game becomes more complex, there are certain cards whose functionality synchronizes better with other decks and deck types come into being as a result of shared strategies and knowledge about gameplay and counter-strategies. For example,the Silence Priest deck uses Silence, an effect to remove card’s text, and encahcement, and ability from minion, to boost a minion with heavy handicap into a high =stat minion. Class in Hearthstone is also defined special abilities of heroes. For example Mage has the ability to do 1 direct damage to any target and has special spells. A deck called Silent Priest will inevitably have a lot of priests. 
 
-Graphs supporting your analysis
+
+There are 23 types of decks, and our data has the win rates of 200 match ups of pairs of decks. This does not include matches between same type of decks (e.g. Midrange hunter vs Midrange Hunter) or unpopular types of match ups. We then constructed a directed graph where the nodes are the deck types and the edges are the historical win rates between the two decks A and B. For every pair of nodes, there is one edge from A to B and from B to A. The edge weight of (A,B) will be w, where w = win rate of A beating B and edge weight of (B,A) is 1 -w. For decks with no data, we initialize them to be 0.5 in both direction. We initialized the score of every deck to be 10 divided by the number of decks(23). 
+
+For each iteration of Page rank we update the score of the previous iteration by doing the following:
+
+(I)For each vertex v without outgoing: score is kept the same
+(II) For each vertex v with previous rank, c, if there are outgoing edges, start the rank of each node,reset c to be 0.0 , then:
+	1) sum all the edges leaving v, s 
+	2) for each outgoing neighbor of v, y, divide weight of(v,y) by s to get new weight w’
+	3) Multiply w’ by previous score to get w’’
+	4) Add w’’ to the c
+Wean the Page rank algorithm for 2000 iterations, or an arbitrarily high number of iteration so the numbers would converge or the page rank of each vertex would not change. 
+
+Rationale for using page rank: We wanted to simulate the events of playing a sufficiently large number of games between pairs of decks to see if there is one deck  or a group of decks that are “better.” Each iteration of page rank simulates one round of game play where the win rates of a pair of deck (A,B) determine how much rank A is giving away to B for the next iteration. Therefore, we are looking for a group of decks with the lowest numbers since this indicates, there it is giving away a lot of its previous ranks through high win rates. 
+
+
+Analysis of data: From our simulation, we realized that the page rank of each vertex(deck type) did change from their initial values of 0.43478. With higher iterations, this change is less 
 Under Drawings Folder
 
 Any code that you wrote or used for the analysis - 
