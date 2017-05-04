@@ -12,11 +12,11 @@ Under NETS150FinalProject folder
 User manual - 
 In UserManual.doc
 
-Empirical Analysis
+Empirical Analysis -  
 
-Hypotheses that you proved/disproved
+Hypotheses that you proved/disproved - Our hypothesis is that Hearthstone is that despite the discrepancies in the win rates among different decks, Hearthstone is still a fair game because only a small number decks will have a higher average win rates. Due to the nature of the game having large number of characters, there will be some decks whose attributes that aren’t fully balanced with other decks. In addition, the emergence of popular deck strategies from time to time will some strength and weaknesses in decks that were not known before to the game developers. Although attributes of decks does play a major role in game, human strategy is still a big portion of determining win rates. Therefore, even if a player chooses a deck with higher average win rates, there are counter strategies and it does not necessarily mean the player is more likely to win. 
 
-Analysis results
+Analysis results - 
 
 Graphs supporting your analysis
 Under Drawings Folder
@@ -27,8 +27,6 @@ Under NETS150FinalProject/PageRank.java
 The data set that you used - 
 See test.txt for dataset 
 link to dataset: (http://www.vicioussyndicate.com/drr/matchup-chart-data-reaper-report/)
-
-Theoretical Proofs
 
 
 
