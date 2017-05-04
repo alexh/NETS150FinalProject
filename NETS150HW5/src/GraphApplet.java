@@ -50,8 +50,8 @@ public class GraphApplet extends JApplet {
     /**
      * @see java.applet.Applet#init().
      */
+    
     public void init( Graph ourGraph ) {
-        resize( DEFAULT_SIZE );
         mxGraph graph = new mxGraph();        
         Object parent = graph.getDefaultParent();
 
@@ -71,7 +71,7 @@ public class GraphApplet extends JApplet {
 	        	if(!addedVertices.containsKey(v))
 	        	{
 	        		addedVertices.put(v, graph.insertVertex(parent, null, v.toString(), 20, y, 80, 30));
-	        		y += 100;
+	        		//y += 100;
 	            	
 	        	}
 	        	
@@ -81,7 +81,7 @@ public class GraphApplet extends JApplet {
 	        		if(!addedVertices.containsKey(neighbor))
 	        		{
 		        		addedVertices.put(neighbor, graph.insertVertex(parent, null, v.toString(), 20, y, 80, 30));
-	            		y += 100;
+	            		//y += 100;
 	        		}
 	        		
 	        	}
@@ -104,6 +104,7 @@ public class GraphApplet extends JApplet {
 		new mxHierarchicalLayout(graph).execute(graph.getDefaultParent());
 		new mxParallelEdgeLayout(graph).execute(graph.getDefaultParent());
 		getContentPane().setSize(DEFAULT_SIZE);
+        this.setSize(DEFAULT_SIZE);
     }
 
 

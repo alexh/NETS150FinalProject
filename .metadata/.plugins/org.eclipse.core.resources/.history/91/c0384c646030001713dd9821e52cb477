@@ -1,0 +1,48 @@
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel; 
+import org.jfree.chart.JFreeChart; 
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset; 
+import org.jfree.data.category.DefaultCategoryDataset; 
+import org.jfree.ui.ApplicationFrame; 
+import org.jfree.ui.RefineryUtilities; 
+
+public class PageRankChart extends ApplicationFrame {
+   
+	Iterator<Entry<Vertex, Double>> pagerank;
+	Graph graph;
+	public PageRankChart( String applicationTitle , String chartTitle, Iterator<Entry<Vertex, Double>> pagerank, Graph graph ) {
+		super( applicationTitle );
+		this.pagerank = pagerank;
+		this.graph = graph;
+		JFreeChart barChart = ChartFactory.createBarChart(
+				chartTitle,           
+				"Category",            
+				"Score",            
+				createDataset(),          
+				PlotOrientation.VERTICAL,           
+				true, true, false);
+
+		ChartPanel chartPanel = new ChartPanel( barChart );        
+		chartPanel.setPreferredSize(new java.awt.Dimension( 560 , 367 ) );        
+		setContentPane( chartPanel ); 
+	}
+
+	private CategoryDataset createDataset() {
+		final String winrateString = "Win Rate";
+		final String pagerankString = "Page Rank";
+		final DefaultCategoryDataset dataset = new DefaultCategoryDataset( );  
+
+		while(pagerank.hasNext())
+		{
+			Entry<Vertex, Double> entry = pagerank.next()
+			dataset.addValue(3.0 , pagerankString, );
+		}
+		dataset.addValue( 1.0 , winrate , speed );        
+
+		return dataset; 
+	}
+}
