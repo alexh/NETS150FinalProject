@@ -14,31 +14,7 @@ In UserManual.doc
 
 Empirical Analysis -  
 
-Hypotheses that you proved/disproved - Our hypothesis is that despite efforts to balance the game Hearthstone, given the amount of types of cards, there will be some decks in Hearthstone whose attributes that aren’t fully balanced. Because of this, there will be emergence of popular deck strategies from time to time that will exploit new strengths and weaknesses in decks. Though these strength and weaknesses in decks are subtle and supposedly game developers try to balance the cards as much as possible, they may be present because game developers want to spark new “meta strategies.” Meta strategies are strategies which center the way you are going to strategize, based on the chosen type of decks. Sparking meta strategies might be used to engage new players or retain existing ones. However, these unbalanced decks of strategies may also arise from the intelligence of a community of gamers who discover exploits in strengths and weakness in decks that are unintentional in game development. In addition, although there may be dominant “meta strategies”  in the game, the fact that there are also meta counter strategies and an element of randomness in the game, these unbalanced decks won’t make the game unenjoyable. 
-
-Method: In standard mode, each player is allowed to pick 30 individual cards that make up their deck. At the start of each game, you don’t know what type of cards will be in your opponents deck. However, as game becomes more complex, there are certain cards whose functionality synchronizes better with other decks. Deck types come into being as a result of shared strategies and knowledge about gameplay and counter-strategies. For example,the Silence Priest deck uses Silence, an effect to remove card’s text, and enhancement, and ability from minion, to boost a minion with heavy handicap into a high-stat minion. Class in Hearthstone also defines special abilities of heroes. For example Mage has the ability to do 1 direct damage to any target and has special spells. A deck called Silent Priest will inevitably have a lot of priests. 
-
-
-There are 23 types of decks, and our data has the win rates of 200 match ups of pairs of decks. This does not include matches between same type of decks (e.g. Midrange hunter vs Midrange Hunter) or unpopular types of match ups. We then constructed a directed graph where the vertices are the deck types and the edges are the historical win rates between the two decks A and B. For every pair of nodes, there is one edge from A to B and from B to A. The edge weight of (A,B) will be w, where w = win rate of A beating B and edge weight of (B,A) is 1 - w. For decks with no data, we initialize them to be 0.5 in both direction, assuming equal chance of winning between either decks. We initialized the score of every deck to be 10 divided by the number of decks(23). 
-
-For each iteration of Page rank we update the score of the previous iteration by doing the following:
-
-(I)For each vertex v without outgoing: score is kept the same
-(II) For each vertex v with previous rank, c, if there are outgoing edges, start the rank of each node,reset c to be 0.0 , then:
-	1) sum all the edges leaving v, s 
-	2) for each outgoing neighbor of v, y, divide weight of(v,y) by s to get new weight w’
-	3) Multiply w’ by previous score to get w’’
-	4) Add w’’ to the c
-Wean the Page rank algorithm for 2000 iterations, or an arbitrarily high number of iteration so the numbers would converge or the page rank of each vertex would not change. 
-
-Rationale for using page rank: We wanted to simulate the events of playing a sufficiently large number of games between pairs of decks to see if there is one deck  or a group of decks that are “better.” Each iteration of page rank simulates one round of game play, where the win rates, the page rank score, of a deck is updated by the incoming and outgoing edges, its win rates. The higher the win rate, the higher the weight of the outgoing edge. It determine how much rank A is giving away to B for the next iteration, or the “flow” from A to B. Therefore, we are looking for a group of decks with the lowest numbers.  This indicates, there a deck is giving away a lot of its previous ranks through edges with high win rates. 
-
-
-Analysis of data: From our simulation, we realized that the page rank of each vertex(deck type) did change from their initial values of 0.43478 which is 10 / 23. With higher iterations, this incremental change in page rank becomes smaller and the value converges.  We realized that there are some deck types and classes with the lowest values, meaning that they have higher win rates. The top three decks have two which are Paladin. They are Midrange Paladin with rank of 0.3671 and Murloc Paladin with rank of 0.3728. It should be noted that a smaller value can be interpreted that the deck is better because more value flows from a deck A to a deck B if deck A beats deck B more often. Taking into account of top 5, there are two decks that are of type Priest. They are Dragon Priest with rank of 0.3649 and Silence Priest with rank of 0.3818. It is interesting to note that many class of decks are ranked in clusters. For example, the bottom two decks are of type Shamans with Elemental Shaman having page rank of 0.6103 and Murloc Shaman having page rank of 0.6195. Decktype Warlock is also a close second. 
-
-
-Conclusion: We were able to verify out hypothesis from this experiment. We realized that certain types of decks, such as Paladin and Priest have higher win rates. While looking at the win rates, a trend in Paladin class or Priest aren’t particularly obvious because of counter strategies, doing a page rank  analysis and simulating many games with page rank allowed us to isolate trends in in dominant classes deck types. Thus, for the time being these two types of decks are the most powerful. However, it is important to note that while these two decks are powerful right now, Hearthstone is a ever evolving game that is governed by a free hand. As more player realize the popularity in certain types of decks, there will be higher chance of player choosing a counter strategies. Thus before we know it, another strategy will arise. 
-
+See Anaylsis.doc
 
 
 Under Drawings Folder
