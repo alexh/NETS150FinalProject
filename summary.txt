@@ -20,7 +20,8 @@ See Anaylsis.doc
 Under Drawings Folder
 
 Any code that you wrote or used for the analysis - 
-Under NETS150FinalProject/PageRank.java 
+Under NETS150FinalProject/src/
+The NETS150FinalProject folder is an Eclipse project and includes all .jar files necessary to compile the code.
 
 The data set that you used - 
 See test.txt for dataset 
