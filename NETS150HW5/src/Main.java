@@ -21,6 +21,8 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		//"../test.txt"
 		FileParser fp = new FileParser(sc.next());
+		fp.addRemainingEdges();
+
 		Graph g = fp.getGraph();
 		
 		GraphApplet graphVisual = new GraphApplet();
