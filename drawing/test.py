@@ -63,6 +63,6 @@ for line in lines:
     edge_size[g.edge(v1,v2)] = 1
 pos = radial_tree_layout(g, g.vertex(0))
 graph_draw(g, vertex_size = vertex_size, edge_pen_width = edge_size, vertex_text=v_prop, 
-	edge_text=property_map, edge_font_size=18, vertex_font_size=18, output_size=(5000, 5000), output="two-nodes.png")
+	edge_text=property_map, edge_font_size=18, vertex_font_size=18, output_size=(5000, 5000), output="graph.png")
 
 
