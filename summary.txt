@@ -2,7 +2,7 @@ Alex Haynes, Henry Zhu, Will Yeung
 Our project collects data from a digital card game Hearthstone. Hearthstone is a turned
 based card game where players can choose to play as one of nine classes and we are trying to find out which class is the most optimal class to play. We collected data from http://www.vicioussyndicate.com/drr/matchup-chart-data-reaper-report/ and put them into a txt file. Our program parses the txt file, construct a graph from the data and runs pagerank on the graph to find the most optimal class to play. We produced visual graphs and raw data for the users to copy or understand from. 
 
-The category we took from above is graph and graph algorithms. Data structures for constructing a graph were written, so that pagerank could be run on the dataset. From the pagerank, we marked the vertex with the most pagerank as the most optimal class because it has the most "flow" from all the other vertices.
+The category we took from above is graph and graph algorithms. Data structures for constructing a graph were written, so that pagerank could be run on the dataset. From the pagerank, we marked the vertex with the least pagerank as the most optimal class because it has the least "flow" from all the other vertices. This is because flow flows from deck A to deck B at a higher rate if deck A beats deck B more of the time.
 
 Implementation Project
 
