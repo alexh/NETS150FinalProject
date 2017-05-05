@@ -1,4 +1,4 @@
-
+package src;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -18,9 +18,9 @@ import org.jfree.ui.RefineryUtilities;
 public class Main {
 
 	public static void main(String[] args) {
-//		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		//"../test.txt"
-		FileParser fp = new FileParser("../test.txt");
+		FileParser fp = new FileParser(sc.next());
 		fp.addRemainingEdges();
 
 		Graph g = fp.getGraph();
